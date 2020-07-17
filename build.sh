@@ -3,7 +3,7 @@ set -x
 set -e
 set -v
 
-FLINK_URL=`sed '/^FLINK_URL=/!d;s/.*=//' flink-parcel.properties` 
+FLINK_URL=`sed '/^FLINK_URL=/!d;s/.*=//' flink-parcel.properties`
 FLINK_VERSION=`sed '/^FLINK_VERSION=/!d;s/.*=//' flink-parcel.properties`
 EXTENS_VERSION=`sed '/^EXTENS_VERSION=/!d;s/.*=//' flink-parcel.properties`
 OS_VERSION=`sed '/^OS_VERSION=/!d;s/.*=//' flink-parcel.properties`
@@ -73,7 +73,7 @@ function build_flink_parcel {
   sed -i -e "s/%SERVICENAMELOWER%/$flink_service_name_lower/" ./$flink_parcel_folder/meta/parcel.json
   java -jar cm_ext/validator/target/validator.jar -d ./$flink_parcel_folder
   mkdir -p $flink_built_folder
-  tar zcvhf ./$flink_built_folder/$flink_parcel_name $flink_parcel_folder --owner=root --group=root
+  tar zcvhf ./$flink_built_folder/$flink_parcel_name $flink_parcel_folder
   java -jar cm_ext/validator/target/validator.jar -f ./$flink_built_folder/$flink_parcel_name
   python cm_ext/make_manifest/make_manifest.py ./$flink_built_folder
   sha1sum ./$flink_built_folder/$flink_parcel_name |awk '{print $1}' > ./$flink_built_folder/${flink_parcel_name}.sha

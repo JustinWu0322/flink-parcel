@@ -1,0 +1,64 @@
+# maven ignore
+HELP.md
+target/
+#*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+# eclipse ignore
+.settings/
+.project
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+### IntelliJ IDEA ###
+.idea
+*.iws
+
+# temp ignore
+logs/
+*.doc
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+#eclipse ignore
+*.eml
+*.iml
+*.ipr
+
+
+
+## cm_ext
+cm_ext/
+
+# flink
+flink-1.11.0-bin-scala_2.12.tgz
+FLINK_ON_YARN-1.11.0.jar
+FLINK-1.11.0-BIN-SCALA_2.12/
+FLINK-1.11.0-BIN-SCALA_2.12_build/
+flink_csd_build/
+
+
+
